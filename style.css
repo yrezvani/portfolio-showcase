@@ -3,12 +3,14 @@
     src: url(./assets/fonts/Roboto-Regular/Roboto-Regular.woff);
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     font-family: "Roboto-Regular", Verdana, sans-serif;
 }
 
+/* General styling for both screen sizes */
 body {
     background-color: #c4c6cb;
 }
@@ -37,90 +39,263 @@ body {
     text-decoration: none;
 }
 
-.header-top h1 {
+/* Background for name in header */
+#name {
     background-color: rgb(77, 131, 149);
     padding: 1vh 0;
     padding-left: 5vw;
     padding-right: 1vw;
     margin: 1vh 0;
-    
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 36px;
+    color: rgb(20, 20, 99);
+    margin-left: 7vw;
+    margin-bottom: 5vh;
+    padding-right: 1vw;
+    border-right: 2px solid black;
+    text-align: end;
+    width: 10vw;
+}
+
+h3 {
+    position: relative;
+    background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(0, 3, 21));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    top: -5vh;
+    text-align: end;
+    margin-right: 2vw;
+    font-size: 26px;
 }
 
 p {
     color: #081735;
     margin: 5px;
+    width: 77.4%;
+    height: 18vh;
+}
+
+h5,
+h5 + p {
+    font-size: 12px;
+    margin-left: 0;
+    height: initial;
+}
+
+.first-text {
+    background-color: aquamarine;
+    position: absolute;
+    margin-left: 2vw;
+    top: 28vh!important;
 }
 
 .text-box {
     background-color: aquamarine;
     position: absolute;
     margin-left: 2vw;
+    top: 12vh;
 }
 
 .relative {
     position: relative;
 }
 
-.grid img {
-    border: 1px rgb(137, 161, 137) solid;
-    background-color: white;
-    width: 100%;
+@media only screen and (min-width: 601px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    /* Placing titles and content side by side */
+    .about-wrapper,
+    .work-wrapper,
+    .contact-wrapper {
+        display: flex;
+        gap: 3vw;
+    }
+
+   
+
+    .work-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
+        gap: 1vw;
+        width: 78%;
+    }
+
+    .first {
+        grid-column: span 2;
+    }
+
+    .contact-wrapper a {
+        align-self: flex-end;
+        padding-bottom: 3vh;
+    }
+
+    h1#contact {
+        margin-bottom: 2vh;
+    }
+
+    footer ul a {
+        color: rgb(20, 20, 99);
+        font-size: 20px;
+    }
+
 }
 
-.grid img:hover {
-    transform: scale(1.1);
-    border: 5px solid rgb(241, 91, 241);
+
+@media only screen and (min-width: 901px) and (max-width: 1100px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .header-top a {
+        font-size: 15px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .work-grid,
+    p {
+        width: 77%;
+    }
+
+    footer ul a {
+        font-size: 16px;
+        width: 77%;
+    }
+
+    
+}
+
+@media only screen and (min-width: 601px) and (max-width: 901px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .header-top a {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .work-grid,
+    p {
+        width: 75%;
+    }
+
+    footer ul a {
+        font-size: 13px;
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 745px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .header-top a {
+        font-size: 13px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    p {
+        height: 23vh;
+    }
+}
+
+
+.first-screenshot {
+    border: 2px rgb(23 132 23) solid;
+    background-color: white;
+    width: 100%;
+    height: 35vh;
+}
+
+.screenshot {
+        border: 2px rgb(23 132 23) solid;
+        background-color: white;
+        width: 100%;
+        height: 17vh;
+}
+
+
+.first-screenshot:hover,
+.screenshot:hover {
+    transform: scale(1.01);
+    border: 5px solid rgb(23 132 23);
 }
 
 
 footer ul {
     display: flex;
+    justify-content: space-around;
+    width: 78.4%;
 }
+
+
 
 
 @media only screen and (max-width: 600px) {
     .banner {
         width: 100%;
     }
-    .header-top h1 {
+    #name {
         padding: 0.5vh 0;
         padding-left: 5vw;
         padding-right: 1vw;
         margin: 1vh 0;
-        color: black!important;
     }
     
     h1 {
         font-size: 20px;
         color: rgb(20, 20, 99);
         margin: 8px 5px;
+        border: none;
+        padding-right: none;
+        text-align: initial;
+        width: initial;
     }
 
-    .header-bottom h3 {
-        position: relative;
+    h3 {
         top: -3vh;
-        left: 70vw;
         font-size: 14px;
-        background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(0, 3, 21));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
     }
     
     .header-top li a {
         font-size: 13px;
     }
 
-    .grid img {
+    .work-grid,
+    p {
+        width: 98%;
+    }
+
+    .first-screenshot,
+    .screenshot {
         height: 100%;
     }
+
     h5,
     h5 + p {
-        font-size: 12px;
+        font-size: 10px;
         margin-left: 2vw;
         margin-right: 2vw;
     }
@@ -130,12 +305,15 @@ footer ul {
         text-decoration: none;
     }
 
-       #about + p {
+    #about + p {
         text-align: justify;
+        margin: 5px;
+        width: 98%;
+        height: initial;
     }
 
     .text-box {
-        top: 17vh;
+        top: 14vh!important;
         display: inline-block;
 
     }
@@ -143,10 +321,18 @@ footer ul {
     footer ul {
         gap: 5px;
         margin-left: 2vw;
-        font-size: 13px;
+        width: 98%;
+        display: initial;
+
     }
 
-
+    footer ul a {
+        font-size: 13px;
+        padding: 0 1vw;
+    }
 }
+
+/* Screen sizes above 600px */
+
 
 
