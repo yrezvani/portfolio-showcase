@@ -57,8 +57,12 @@ p {
 
 .text-box {
     background-color: aquamarine;
+    position: absolute;
+    margin-left: 2vw;
+}
+
+.relative {
     position: relative;
-    margin-left: 3vw;
 }
 
 .grid img {
@@ -127,7 +131,7 @@ footer ul {
     }
 
     .text-box {
-        top: -6vh;
+        top: 17vh;
         display: inline-block;
 
     }
