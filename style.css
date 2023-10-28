@@ -105,6 +105,10 @@ footer ul {
         top: -3vh;
         left: 70vw;
         font-size: 14px;
+        background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(0, 3, 21));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     }
     
     .header-top li a {
