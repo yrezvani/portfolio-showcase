@@ -10,9 +10,9 @@
     font-family: "Roboto-Regular", Verdana, sans-serif;
 }
 
-/* General styling for both screen sizes */
+/* General styling */
 body {
-    background-color: #c4c6cb;
+    background-color: #d6d8dd;
 }
 
 .header-top {
@@ -29,9 +29,10 @@ body {
     padding-right: 7vw;
 }
 
-.header-top li a {
+.nav-link {
     color: #9db6ec;
     text-decoration: none;
+    font-size: 18px;
 }
 
 
@@ -114,9 +115,9 @@ h5 + p {
     }
 
     /* Placing titles and content side by side */
-    .about-wrapper,
-    .work-wrapper,
-    .contact-wrapper {
+    .about-section,
+    .work-section,
+    .contact-section {
         display: flex;
         gap: 3vw;
     }
@@ -131,11 +132,11 @@ h5 + p {
         width: 78%;
     }
 
-    .first {
+    .first-work {
         grid-column: span 2;
     }
 
-    .contact-wrapper a {
+    .contact-section a {
         align-self: flex-end;
         padding-bottom: 3vh;
     }
@@ -144,7 +145,7 @@ h5 + p {
         margin-bottom: 2vh;
     }
 
-    footer ul a {
+    .footer-link {
         color: rgb(20, 20, 99);
         font-size: 20px;
     }
@@ -170,7 +171,7 @@ h5 + p {
         width: 77%;
     }
 
-    footer ul a {
+    .footer-link {
         font-size: 16px;
         width: 77%;
     }
@@ -196,7 +197,7 @@ h5 + p {
         width: 75%;
     }
 
-    footer ul a {
+    .footer-link {
         font-size: 13px;
         width: 75%;
     }
@@ -279,7 +280,7 @@ footer ul {
         font-size: 14px;
     }
     
-    .header-top li a {
+    .nav-link {
         font-size: 13px;
     }
 
@@ -326,7 +327,7 @@ footer ul {
 
     }
 
-    footer ul a {
+    .footer-link {
         font-size: 13px;
         padding: 0 1vw;
     }
