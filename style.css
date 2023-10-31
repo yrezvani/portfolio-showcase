@@ -15,14 +15,19 @@ body {
     background-color: #d6d8dd;
 }
 
-.header-top {
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar {
     background-color: rgb(28, 33, 36);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header-top ul {
+.nav-links {
     display: flex;
     list-style: none;
     gap: 3vw;
@@ -35,11 +40,27 @@ body {
     font-size: 18px;
 }
 
-.menu-wrapper a {
-    text-decoration: none;
+/* Placing section heading and content side by side */
+.main-body {
+    display: flex;
+    gap: 3vw;
 }
 
-/* name and icon */
+
+/* Grid of web app screenshots */
+.work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.4fr 0.4fr;
+    gap: 1vw;
+    width: 77%;
+}
+
+.first-work {
+    grid-column: span 2;
+}
+
+/* name and avatar */
 
 .name-wrapper {
     background-color: rgb(77, 131, 149);
@@ -48,20 +69,23 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 20vw;
+    width: 16vw;
     height: 6vh;
 }
-.icon {
-    padding-left: 4vw;
-    width: 50%;
-    height: 50%;
+.avatar {
+    padding-left: 2vw;
+    padding-right: 0.5vw;
+    width: 18%;
 }
 
 #name {
-    margin: initial;
-    margin-left: 1vw;
+    margin: 0;
     border: none;
     width: initial;
+}
+
+.banner {
+    width: 100%;
 }
 
 h1 {
@@ -93,13 +117,9 @@ p {
     height: 18vh;
 }
 
-h5,
-h5 + p {
-    font-size: 12px;
-    margin-left: 0;
-    height: initial;
-}
 
+
+/* text boxes for repos */
 .first-text {
     background-color: aquamarine;
     position: absolute;
@@ -118,6 +138,14 @@ h5 + p {
     position: relative;
 }
 
+h5,
+h5 + p {
+    font-size: 12px;
+    margin-left: 0;
+    height: initial;
+}
+
+/* Screenshots and hover effect */
 .first-screenshot {
     border: 2px rgb(23 132 23) solid;
     background-color: white;
@@ -139,49 +167,18 @@ h5 + p {
     border: 5px solid rgb(23 132 23);
 }
 
-
-footer ul {
+/* Footer links */
+.footer-links {
     display: flex;
     justify-content: space-around;
-    width: 78.4%;
+    width: 77%;
 }
 
-
+/* Adding responsiveness for different screen sizes */
 @media only screen and (min-width: 601px) {
-    .wrapper {
-        display: flex;
-        flex-direction: column;
+    
 
-    }
-
-    .banner {
-        width: 100%;
-        height: 50%;
-    }
-
-    /* Placing titles and content side by side */
-    .about-section,
-    .work-section,
-    .contact-section {
-        display: flex;
-        gap: 3vw;
-    }
-
-   
-
-    .work-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 0.4fr 0.4fr;
-        gap: 1vw;
-        width: 77%;
-    }
-
-    .first-work {
-        grid-column: span 2;
-    }
-
-    .contact-section a {
+    .footer-link {
         align-self: flex-end;
         padding-bottom: 3vh;
     }
@@ -207,7 +204,7 @@ footer ul {
         font-size: 28px;
     }
 
-    .header-top a {
+    .nav-link {
         font-size: 15px;
     }
 
@@ -237,7 +234,7 @@ footer ul {
         font-size: 22px;
     }
 
-    .header-top a {
+    .nav-link {
         font-size: 14px;
     }
 
@@ -258,15 +255,12 @@ footer ul {
 }
 
 @media only screen and (min-width: 601px) and (max-width: 745px) {
-    .name-wrapper {
-        height: 4vh;
-    }
     
     h1 {
         font-size: 18px;
     }
 
-    .header-top a {
+    .nav-link {
         font-size: 13px;
     }
 
@@ -279,34 +273,26 @@ footer ul {
     }
 }
 
+/* Smallest screen sizes (Mobiles) */
 @media only screen and (max-width: 600px) {
-    .banner {
-        width: 100%;
-    }
     
     .name-wrapper {
-        background-color: rgb(77, 131, 149);
-        margin: 1vh auto;
-        padding-right: 1vh;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 30vw;
+        width: 25vw;
         height: 4vh;
     }
-    .icon {
+    .avatar {
         padding-left: 4vw;
-        height: 75%;
+        width: 25%;
     }
     
     #name {
-        margin: initial;
         margin-left: 1vw;
     }
     
-    .header-top {
+    .nav-bar {
         flex-wrap: wrap;
     }
+    
     h1 {
         font-size: 20px;
         color: rgb(20, 20, 99);
@@ -329,11 +315,15 @@ footer ul {
         font-size: 13px;
     }
 
-    .work-grid,
-    p {
+    .work-grid {
+        display: initial;
         width: 98%;
     }
 
+    .main-body {
+        display: initial;
+    }
+    
     .first-screenshot,
     .screenshot {
         height: 20vh;
@@ -349,7 +339,6 @@ footer ul {
 
     h5 {
         padding-top: 0.5vh;
-        text-decoration: none;
     }
 
     #about + p {
@@ -365,12 +354,12 @@ footer ul {
 
     }
 
-    footer ul {
+    .footer-links {
         gap: 5px;
-        margin-left: 2vw;
+        margin-left: 1vw;
         width: 98%;
-        display: initial;
-
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 
     .footer-link {
